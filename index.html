@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions & Transforms</title>
+    <style>
+        .container{
+            border: 20px solid lightslategrey;
+            background:linear-gradient(lightslategrey,darkgrey,lightsteelblue);
+            height:950px;
+        }
+        .boxes{
+            border: 20px solid lightslategrey;
+            background-color: lightsteelblue;
+            height:900px;
+            width:480px;
+        }
+        p {
+            background-color: steelblue;
+            font-size: medium;
+            height: 110px;
+            width: 150px;
+            font-size: x-large;
+            display: flex;
+            position:relative;
+            top:-80vh;
+            left:120vh;
+            text-align: center;
+            align-items: center;
+            transition: transform 0.5s ease;
+        }
+        label {
+            border: 1px solid black;
+            background-color: black;
+            color: violet;
+            padding: 5px;
+            display: inline-block;
+            height:30px;
+            width:400px;
+            text-align: center;
+           margin-top:5vh;
+           margin-left:2vh; 
+        }
+        label {
+            display: block;
+            margin-top: -2vh; 
+            margin-left:35px;
+
+        }
+        #transformnone:checked ~ label ~ div p {
+            transform: rotate(0deg);
+
+        }
+        #transform10:checked ~ label ~ div p {
+            transform: rotate(10deg);
+            
+        }
+        #transform45:checked ~ label ~ div p {
+            transform: rotate(45deg);
+          
+        }
+        #transformX:checked ~ label ~ div p {
+            transform: rotateX(45deg);
+        }
+        #transformY:checked ~ label ~ div p {
+            transform: rotateY(45deg);
+           
+        }
+        #transform80:checked ~ label ~ div p {
+            transform: rotateY(80deg);
+          
+        }
+        #transformS20:checked ~ label ~ div p {
+            transform: skew(20deg,20deg);
+            
+        }
+        #transformS30:checked ~ label ~ div p {
+            transform: skew(30deg,30deg);
+           
+        }
+        #transformX30:checked ~ label ~ div p {
+            transform: skewX(30deg);
+           
+        }
+        #transformX40:checked ~ label ~ div p {
+            transform: skewX(40deg);
+           
+        }
+        #transformY30:checked ~ label ~ div p {
+            transform: skewY(30deg);
+           
+        }
+        #transformY40:checked ~ label ~ div p {
+            transform: skewY(40deg);
+           
+        }
+        #transformY2010:checked ~ label ~ div p {
+            transform: translate(20px,10px);
+           
+        }
+        #transform2020:checked ~ label ~ div p {
+            transform: translate(20px,20px);
+          
+        }
+        #transform22:checked ~ label ~ div p {
+            transform: scale(2,2);
+            
+        }
+        #transform23:checked ~ label ~ div p {
+            transform: scale(2,3);
+           
+        }
+        #transform0:checked ~ label ~ div p {
+            transform: matrix(0.866,0.7,-0.8,0.866,0,0);
+           
+        }
+        #transform1:checked ~ label ~ div p {
+            transform: matrix(0.586,0.7,-0.8,0.586,0,0);
+         
+        }
+        #transform2:checked ~ label ~ div p {
+            transform: matrix(0.586,0.7,-0.8,0.586,40,30);
+            
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: chocolate;
+        }
+        h1:hover{
+            background-color: darkgrey;
+        }
+       label:hover{
+        background-color: dimgrey;
+       }
+      
+    </style>
+</head>
+<body>
+    <h1>Transitions&Transforms</h1>
+    <div class="container">
+        <div class="boxes">
+            <input type="radio" id="transformnone" name="transform" value="transform">
+            <label for="transform">Transform type: None</label>
+            <input type="radio" id="transform10" name="transform" value="transform">
+            <label for="transform">Transform type: Rotate(10deg)</label>
+            <input type="radio" id="transform45" name="transform" value="transform">
+            <label for="transform">Transform type: Rotate(45deg)</label>
+            <input type="radio" id="transformX" name="transform" value="transform">
+            <label for="transform">Transform type: RotateX(45deg)</label>
+            <input type="radio" id="transformY" name="transform" value="transform">
+            <label for="transform">Transform type: RotateY(45deg)</label>
+            <input type="radio" id="transform80" name="transform" value="transform">
+            <label for="transform">Transform type: RotateY(80deg)</label>
+            <input type="radio" id="transformS20" name="transform" value="transform">
+            <label for="transform">Transform type: skew(20deg,20deg)</label> 
+            <input type="radio" id="transformS30" name="transform" value="transform">
+            <label for="transform">Transform type: skew(30deg,30deg)</label>
+            <input type="radio" id="transformX30" name="transform" value="transform">
+            <label for="transform">Transform type: skewX(30deg)</label>
+            <input type="radio" id="transformX40" name="transform" value="transform">
+            <label for="transform">Transform type: skewX(40deg)</label>
+            <input type="radio" id="transformY30" name="transform" value="transform">
+            <label for="transform">Transform type: skewY(30deg)</label>
+            <input type="radio" id="transformY40" name="transform" value="transform">
+            <label for="transform">Transform type: skewY(40deg)</label>
+            <input type="radio" id="transform2010" name="transform" value="transform">
+            <label for="transform">Transform type:translate(20px,10px);</label>
+            <input type="radio" id="transform2020" name="transform" value="transform">
+            <label for="transform">Transform type:translate(20px,20px);</label>
+            <input type="radio" id="transform22" name="transform" value="transform">
+            <label for="transform">Transform type:scale(2,2);</label>
+            <input type="radio" id="transform23" name="transform" value="transform">
+            <label for="transform">Transform type:scale(2,3);</label>
+            <input type="radio" id="transform0" name="transform" value="transform">
+            <label for="transform">Transform type: matrix(0.866,0.7,-0.8,0.866,0,0);</label>
+            <input type="radio" id="transform1" name="transform" value="transform">
+            <label for="transform">Transform type:  matrix(0.586,0.8,-0.8,0.586,0,0);</label>
+            <input type="radio" id="transform2" name="transform" value="transform">
+            <label for="transform">Transform type:  matrix(0.586,0.8,-0.8,0.586,40,30);</label>
+            <div><p><img src="./car.jpg" height="400", width="400"></p></div>
+            
+        </div>
+    </div>
+</body>
+</html>
